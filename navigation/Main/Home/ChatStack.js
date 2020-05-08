@@ -1,8 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { Image, Platform } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons';
+
+
 import ChatListSceen from "../../../screens/Chat/ChatListScreen";
-import ChatDetailScreen from "../../../screens/Chat/ChatDetailScreen";
+// import ChatDetailScreen from "../../../screens/Chat/ChatDetailScreen";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -12,7 +15,7 @@ const config = Platform.select({
 const ChatStack = createStackNavigator(
   {
     ChatListSceen,
-    ChatDetailScreen
+    // ChatDetailScreen
   },
   config
 );
@@ -20,18 +23,8 @@ const ChatStack = createStackNavigator(
 ChatStack.navigationOptions = ({ navigation }) => {
   let tabBarIcon = ({ focused }) =>
     focused ? (
-      <Image
-        style={{ width: 25, height: 21 }}
-        source={require("../../../assets/images/icons/i_chat_on.png")}
-        size={26}
-      />
-    ) : (
-      <Image
-        style={{ width: 25, height: 21 }}
-        source={require("../../../assets/images/icons/i_chat_off.png")}
-        size={26}
-      />
-    );
+<MaterialIcons name="chat-bubble-outline" size={24} color="black" />    ) : (
+<MaterialIcons name="chat-bubble-outline" size={24} color="black" />      );
 
   let tabBarLabel = null;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { Image, Platform } from "react-native";
 import NotificationScreen from "../../../screens/Notification/NotificationScreen";
-import NotificationDetailScreen from "../../../screens/Notification/NotificationDetailScreen";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const config = Platform.select({
@@ -13,7 +13,7 @@ const config = Platform.select({
 const NoticeStack = createStackNavigator(
   {
     NotificationScreen,
-    NotificationDetailScreen
+    // NotificationDetailScreen
   },
   config
 );
@@ -21,18 +21,10 @@ const NoticeStack = createStackNavigator(
 NoticeStack.navigationOptions = ({ navigation }) => {
   let tabBarIcon = ({ focused }) =>
     focused ? (
-      <Image
-        style={{ width: 20, height: 23 }}
-        source={require("../../../assets/images/icons/i_alarm_on.png")}
-        size={26}
-      />
+      <MaterialCommunityIcons name="bell-outline" size={24} color="black" />
     ) : (
-      <Image
-        style={{ width: 20, height: 23 }}
-        source={require("../../../assets/images/icons/i_alarm_off.png")}
-        size={26}
-      />
-    );
+        <MaterialCommunityIcons name="bell-outline" size={24} color="black" />
+      );
 
   let tabBarLabel = null;
 

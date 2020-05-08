@@ -1,16 +1,18 @@
 import React from "react";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import HomeStack from "./Home/HomeStack";
-// import ChatStack from "./Home/ChatStack";
-// import NoticeStack from "./Home/NoticeStack";
-// import MyPageStack from "./Home/MyPageStack";
+import ReservationStack from "./Home/ReservationStack";
+import ChatStack from "./Home/ChatStack";
+import NoticeStack from "./Home/NoticeStack";
+import MyPageStack from "./Home/MyPageStack";
 
 const MainTabNavigator = createBottomTabNavigator(
   {
     HomeStack,
-    // ChatStack,
-    // NoticeStack,
-    // MyPageStack
+    ReservationStack,
+    ChatStack,
+    NoticeStack,
+    MyPageStack
   },
   {
     tabBarOptions: {

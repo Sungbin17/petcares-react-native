@@ -2,11 +2,8 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { Image, Platform } from "react-native";
 import MyPageScreen from "../../../screens/MyPage/MyPageScreen";
-import StudentChangeProfileScreen from '../../../screens/MyPage/StudentChangeProfileScreen'
-import StudentRegisterScreen1 from '../../../screens/Auth/Student/StudentRegisterScreen1'
 
-import MentorRegisterScreen1 from '../../../screens/Auth/Mentor/MentorRegisterScreen1';
-import MentorRegisterScreen2 from '../../../screens/Auth/Mentor/MentorRegisterScreen2';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 const config = Platform.select({
@@ -17,10 +14,6 @@ const config = Platform.select({
 const MyPageStack = createStackNavigator(
   {
     MyPageScreen,
-    StudentChangeProfileScreen,
-    StudentRegisterScreen1,
-    MentorRegisterScreen1,
-    MentorRegisterScreen2
   },
   config
 );
@@ -28,18 +21,10 @@ const MyPageStack = createStackNavigator(
 MyPageStack.navigationOptions = ({ navigation }) => {
   let tabBarIcon = ({ focused }) =>
     focused ? (
-      <Image
-        style={{ width: 20, height: 23 }}
-        source={require("../../../assets/images/icons/i_person_on.png")}
-        size={26}
-      />
+      <MaterialIcons name="person-outline" size={24} color="black" />
     ) : (
-      <Image
-        style={{ width: 20, height: 23 }}
-        source={require("../../../assets/images/icons/i_person_off.png")}
-        size={26}
-      />
-    );
+        <MaterialIcons name="person-outline" size={24} color="black" />
+      );
 
   let tabBarLabel = null;
 
